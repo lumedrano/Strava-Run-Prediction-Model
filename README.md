@@ -56,6 +56,7 @@ This project analyzes running data from Strava to predict 10K race performance. 
 
    * To get all of your Strava data in bulk for processing, follow this link: [Strava Bulk Export](https://support.strava.com/hc/en-us/articles/216918437-Exporting-your-Data-and-Bulk-Export#h_01GDP2C5E3278KM8MPK5X49ED3)
    * Scroll all the way down to the header **Bulk Export** and follow the directions to have your activity data emailed to you.
+   * Unzip folder and export only the `activities.csv` file to the `data/` folder
 4. Install dependencies:
 
    ```bash
