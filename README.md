@@ -4,7 +4,7 @@ This project analyzes running data from Strava to predict 10K race performance. 
 
 ## Project Structure
 
-* `data/` – cleaned CSV data exported from Strava
+* `data/` – folder where you should place your Strava CSV export (note: this folder is included in `.gitignore` and not tracked in GitHub)
 * `notebooks/` – Jupyter notebooks for data loading, visualization, and 10K prediction
 
   * `data_visualization.ipynb` – explores running data: pace over time, distance distribution, weekly mileage, and performance curves
@@ -44,16 +44,24 @@ This project analyzes running data from Strava to predict 10K race performance. 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<username>/10k-prediction.git
-   cd 10k-prediction
+   https://github.com/lumedrano/Strava-Run-Prediction-Model.git
+   cd Strava-Run-Prediction-Model
    ```
-2. Install dependencies:
+2. Create a `data/` directory in the project root (this folder is gitignored):
+
+   ```bash
+   mkdir data
+   ```
+3. Place your Strava CSV export in the `data/` folder and update file names if needed.
+
+   * To get all of your Strava data in bulk for processing, follow this link: [Strava Bulk Export](https://support.strava.com/hc/en-us/articles/216918437-Exporting-your-Data-and-Bulk-Export#h_01GDP2C5E3278KM8MPK5X49ED3)
+   * Scroll all the way down to the header **Bulk Export** and follow the directions to have your activity data emailed to you.
+4. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
-3. Place your Strava CSV export in the `data/` folder and update file names if needed.
-4. Open Jupyter notebooks in `notebooks/`:
+5. Open Jupyter notebooks in `notebooks/`:
 
    * Run `data_visualization.ipynb` to explore your data.
    * Run `prediction_model.ipynb` to see predictions for your next 10K.
@@ -71,4 +79,8 @@ This project analyzes running data from Strava to predict 10K race performance. 
 
 * All distances are converted to **miles**, pace is in **minutes per mile**.
 * Predictions assume consistent training; additional long runs or tempo sessions may improve estimates.
-* ML predictions are based o
+* ML predictions are based on recent training trends (last 8 weeks).
+
+## License
+
+This project is open-source and free to use. Modify as needed for personal use or research.
